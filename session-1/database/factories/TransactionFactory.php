@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,7 @@ class TransactionFactory extends Factory
     {
         return [
             'transaction_id' => $this->faker->uuid,
-            // 'username' => $this->faker->name,
+            'user_id' => $this->faker->uuid,
             'item_name' => $this->faker->colorName,
             'price' => $this->faker->randomNumber(5),
         ];
