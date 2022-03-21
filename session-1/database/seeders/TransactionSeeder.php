@@ -2,8 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Transaction;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class TransactionSeeder extends Seeder
 {
@@ -14,6 +18,16 @@ class TransactionSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // DB::table('transactions')->insert(
+        //     [
+        //         'transaction_id' => Str::uuid(),
+        //         'username' => 'Juju',
+        //         'item_name' => 'Minyak Goreng',
+        //         'price' => 45000,
+        //         'created_at' => Carbon::now(),
+        //     ]
+        // );
+
+        Transaction::factory(10)->create();
     }
 }

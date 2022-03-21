@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('transaction_id')->primary();
+            $table->uuid('user_id');
+            $table->string('item_name');
+            $table->integer('price');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

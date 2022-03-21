@@ -17,7 +17,10 @@ class TransactionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'transaction_id' => $this->faker->uuid,
+            // 'username' => $this->faker->name,
+            'item_name' => $this->faker->colorName,
+            'price' => $this->faker->randomNumber(5),
         ];
     }
 }
